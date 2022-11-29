@@ -4,6 +4,8 @@
    Ayush Gupta
 */
 
+use std::cmp::Ordering;
+
 fn main() {
     /*
        An Immutable Variable. Rust offer's immutability by default.
@@ -90,8 +92,75 @@ fn main() {
       We can also define functions and give them parameters.
     */
     let result = my_cool_new_function(10, 20);
+    //   println!("Your result is {}", result);
 
-    // Playground: Here you'll find some cool edge cases and their explanation.
+    /*
+     Control Flow
+    */
+    let num = 69;
+
+    if num != 69 {
+        println!("Try better!")
+    } else if num == 69 {
+        println!("Hehe!")
+    } else {
+        println!("what did you do. :(")
+    }
+
+    // The same as above can also be written with `match` which allows us to explicitly manage all edge cases.
+    match num.cmp(&num) {
+        Ordering::Less => println!("Try better!"),
+        Ordering::Equal => println!("Hehe!"),
+        Ordering::Greater => println!("What did you do. :("),
+    }
+
+    // We can do this too.
+    let condition = true;
+    let condition_depended_number = if condition { 5 } else { 6 }; // We are returning the result in this case and assinging it to the variable.
+
+    /*
+     Loops
+    */
+
+    // Type 1: Infinite Loop unless break
+    let mut counter = 0;
+    loop {
+        // Print num.
+        print!("Loop Run Counter: {}", counter);
+        if counter == 10 {
+            // if num is 10 break out of loop..
+            break;
+        }
+        // Increase num by 1.
+        counter += 1;
+    }
+
+    // Type 2: While Loop
+    let mut counter = 0; // Shadowing ...(eh..)
+    while counter < 3 {
+        print!("Loop Run Counter: {}", counter);
+        counter += 1;
+    }
+
+    // Type 3: Iterating over an array.
+    let a = [10, 42, 53, 67, 74, 95];
+    for element in a.iter() {
+        println!("{}", element);
+    }
+
+    // This is a range loop. (inclusive of 100)
+    for number in 1..=100 {}
+}
+
+/*
+ This is another function. It accepts two arguments and returns a signed 32 bit integer which is the sum of the two arguments.
+*/
+fn my_cool_new_function(a: i32, b: i32) -> i32 {
+    a + b // You could also return via `return` statement.
+}
+
+// Playground: Here you'll find some cool edge cases and their explanation.
+fn playground() {
     /*
      This should throw an error while building since it's integer overflow.
      Observations:
@@ -99,11 +168,4 @@ fn main() {
      - `rust-analyzer` does not throw the error without `  "rust-analyzer.checkOnSave.command": "clippy"` in settings.json of vscode.
     */
     let overflow: u32 = 3 - 5; // This error is intentional.
-}
-
-/*
- This is another function. It accepts two arguments and returns a signed 32 bit integer which is the sum of the two arguments.
-*/
-fn my_cool_new_function(a: i32, b: i32) -> i32 {
-    a + b
 }
