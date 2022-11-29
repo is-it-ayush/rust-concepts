@@ -86,6 +86,11 @@ fn main() {
     let my_array_value = my_array[0]; // Accessing values directly.
     let my_new_array = [0; 8]; // This says, "Hey! Create an array with 8 values, all set to 0."
 
+    /*
+      We can also define functions and give them parameters.
+    */
+    let result = my_cool_new_function(10, 20);
+
     // Playground: Here you'll find some cool edge cases and their explanation.
     /*
      This should throw an error while building since it's integer overflow.
@@ -94,4 +99,11 @@ fn main() {
      - `rust-analyzer` does not throw the error without `  "rust-analyzer.checkOnSave.command": "clippy"` in settings.json of vscode.
     */
     let overflow: u32 = 3 - 5; // This error is intentional.
+}
+
+/*
+ This is another function. It accepts two arguments and returns a signed 32 bit integer which is the sum of the two arguments.
+*/
+fn my_cool_new_function(a: i32, b: i32) -> i32 {
+    a + b
 }
