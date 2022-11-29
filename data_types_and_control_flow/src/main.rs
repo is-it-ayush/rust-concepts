@@ -4,6 +4,12 @@
    Ayush Gupta
 */
 
+// DONT USE THIS IN REAL CODE. (THIS IS ONLY FOR DEMONSTRATION)
+#![allow(dead_code)]
+#![allow(unused_variables)]
+#![allow(unused_mut)]
+#![allow(arithmetic_overflow)] // NEVER USE THIS (highly unsafe).
+
 use std::cmp::Ordering;
 
 fn main() {
@@ -110,13 +116,16 @@ fn main() {
     // The same as above can also be written with `match` which allows us to explicitly manage all edge cases.
     match num.cmp(&num) {
         Ordering::Less => println!("Try better!"),
-        Ordering::Equal => println!("Hehe!"),
+        Ordering::Equal => println!("Hehe 69!"),
         Ordering::Greater => println!("What did you do. :("),
     }
 
     // We can do this too.
     let condition = true;
     let condition_depended_number = if condition { 5 } else { 6 }; // We are returning the result in this case and assinging it to the variable.
+
+    // Seperator
+    println!("------------------------------------------------------");
 
     /*
      Loops
@@ -126,7 +135,7 @@ fn main() {
     let mut counter = 0;
     loop {
         // Print num.
-        print!("Loop Run Counter: {}", counter);
+        println!("Loop Run Counter: {}", counter);
         if counter == 10 {
             // if num is 10 break out of loop..
             break;
@@ -135,12 +144,16 @@ fn main() {
         counter += 1;
     }
 
+    println!("------------------------------------------------------");
+
     // Type 2: While Loop
     let mut counter = 0; // Shadowing ...(eh..)
     while counter < 3 {
-        print!("Loop Run Counter: {}", counter);
+        println!("Loop Run Counter 2: {}", counter);
         counter += 1;
     }
+
+    println!("------------------------------------------------------");
 
     // Type 3: Iterating over an array.
     let a = [10, 42, 53, 67, 74, 95];
@@ -149,7 +162,9 @@ fn main() {
     }
 
     // This is a range loop. (inclusive of 100)
-    for number in 1..=100 {}
+    for number in 1..=100 {
+        // do something.
+    }
 }
 
 /*
@@ -159,7 +174,11 @@ fn my_cool_new_function(a: i32, b: i32) -> i32 {
     a + b // You could also return via `return` statement.
 }
 
-// Playground: Here you'll find some cool edge cases and their explanation.
+/* Playground: Here you'll find some cool edge cases and their explanation.
+   Don't worry about this error.
+   This part of code is unused and only for demonstration.
+   However, In real scenario. Please don't leave any code un-used with errors.
+*/
 fn playground() {
     /*
      This should throw an error while building since it's integer overflow.
@@ -169,4 +188,3 @@ fn playground() {
     */
     let overflow: u32 = 3 - 5; // This error is intentional.
 }
-

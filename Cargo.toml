@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "data_types_and_control_flow",
+    "ownership"
+]
