@@ -169,3 +169,4 @@ fn playground() {
     */
     let overflow: u32 = 3 - 5; // This error is intentional.
 }
+
