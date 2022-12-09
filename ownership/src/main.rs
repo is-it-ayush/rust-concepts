@@ -119,4 +119,11 @@ fn restriction_two() {
    - References must always be valid. (Must not be dangling)
 */
 
+/*
+ * When you want to modify a variable, pass the variable itself directly, simply take ownership. (i.e. take_ownership/move it)
+ * When you want to read a variable, pass it via a reference. (i.e. referencing_and_not_moving)
+ * 
+ * You can also modify a variable by passing it via a mutable reference (you can only have once and only in places where there is no other immutable references). (i.e. mutate_refrencing_without_taking_ownership).
+ */
+
 // ----------------------------------------------------------------------------------------------------------------------
