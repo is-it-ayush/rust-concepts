@@ -63,7 +63,7 @@ fn main() {
     let sum = 10 + 5;
     let difference = 5 - 3; // Quick Thought: What if you reversed em and explicitly defined the type to an unsigned integer. Check bottom @playground.
     let multiply = 3 * 5;
-    let division = 3.5 / 5.0; // Rust ensure same type before division and won't cast itself to the greater type like java does.
+    let division = 3.5 / 5.0; // Rust ensure same type before division and won't cast itself to the greater type like java does (no type casting by default as in java).
     let remainder = 10 % 2;
 
     // Booleans

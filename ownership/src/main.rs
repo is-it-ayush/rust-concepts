@@ -3,7 +3,7 @@
    Ownership Rules:
    - Each value in Rust has a variable that's called it's owner.
    - There can only be one owner at a time.
-   - When the owner goes out of scope, the value will be dropped.
+   - When the owner goes out of scope, the value will be dropped. (Automatic Memory Management, We don't need to worry about deallocation)
    #Reference: https://youtu.be/VFIOSWy93H0 (Let's Get Rusty)
 */
 
@@ -45,7 +45,7 @@ fn initial_ownership() {
     take_ownership(s);
     // println!("{}", s); // Uncomment this line.
     // Error's Out `borrow of moved value: `s`.
-    // Why? Generally when you pass the value to a function. Rust performs a move instead of a copy to that arguement.
+    // Why? Generally when you pass the value to a function. Rust performs a move instead of a copy to that argument.
     // This is only valid for the types in the heap. The stack one's are still copied and can be used.
 }
 
@@ -62,7 +62,7 @@ fn take_and_give_back_ownership(x: String) -> String {
       // This is still tedious.
 }
 
-// Here we are referencing  to the passed in argument. Say We pass in,
+// Here we are referencing to the passed in argument. Say We pass in,
 // let y = String::from("Hello!");
 // referencing_and_not_moving(y); // Here x will reference y and y will point to the actual data. We are not modifying y and x will be dropped after function does executing.
 // Note: references are immutable by default. We CANNOT modify them.
@@ -119,6 +119,4 @@ fn restriction_two() {
    - References must always be valid. (Must not be dangling)
 */
 
-
 // ----------------------------------------------------------------------------------------------------------------------
-
