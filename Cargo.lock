@@ -7,6 +7,10 @@ name = "data_types"
 version = "0.1.0"
 
 [[package]]
+name = "enums_and_pattern_matching"
+version = "0.1.0"
+
+[[package]]
 name = "ownership"
 version = "0.1.0"
 
